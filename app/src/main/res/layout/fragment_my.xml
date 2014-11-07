@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="0dp"
+    tools:context=".MyActivity$PlaceholderFragment">
+
+    <android.support.v4.app.FragmentTabHost
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/now_playing_overview"
+        android:id="@android:id/tabhost"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"/>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </android.support.v4.app.FragmentTabHost>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@id/now_playing_overview"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/now_playing_overview_album"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/now_playing_overview_album"
+            android:layout_toEndOf="@id/now_playing_overview_album"
+            android:layout_toLeftOf="@+id/now_playing_overview_button"
+            android:layout_toStartOf="@id/now_playing_overview_button"
+            android:id="@+id/now_playing_overview_title"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:id="@id/now_playing_overview_button"
+            android:src="@drawable/ic_action_play"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:tag="PLAY"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

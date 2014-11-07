@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="MediaSliderView">
+        <attr name="sliderColor" format="color" />
+        <attr name="sliderShadowColor" format="color" />
+    </declare-styleable>
+</resources>

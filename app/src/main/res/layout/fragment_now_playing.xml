@@ -1,0 +1,146 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="0dp"
+        android:id="@+id/now_playing_topbar"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/now_playing_song_title"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/now_playing_artist_title"
+                android:textAppearance="?android:textAppearanceSmall"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:id="@+id/now_playing_queue_button"
+            android:background="@null"
+            android:src="@drawable/ic_action_view_as_list"/>
+
+    </RelativeLayout>
+
+    <ViewSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/now_playing_topbar"
+        android:layout_above="@+id/controls_divider"
+        android:layout_margin="8dp"
+        android:id="@+id/now_playing_view_swicther">
+
+        <clepto.info.melody.MediaSliderView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:id="@+id/now_playing_media_slider"
+            app:sliderColor="@android:color/holo_blue_light"
+            app:sliderShadowColor="@android:color/black"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/queue_listview">
+
+        </ListView>
+
+    </ViewSwitcher>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/now_playing_control_bar"
+        android:id="@id/controls_divider"
+        android:background="@android:color/holo_blue_light">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="4dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:id="@id/now_playing_control_bar"
+        android:background="@android:color/white">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_action_shuffle"
+            android:id="@+id/now_playing_shuffle_button"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_action_previous"
+            android:id="@+id/now_playing_previous_button"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_action_play"
+            android:id="@+id/now_playing_play_button"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_action_next"
+            android:id="@+id/now_playing_next_button"/>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:src="@drawable/ic_action_repeat"
+            android:id="@+id/now_playing_replay_button"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
